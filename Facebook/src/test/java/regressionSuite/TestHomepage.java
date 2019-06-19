@@ -13,7 +13,7 @@ public class TestHomepage extends CommonAPI {
     Homepage homepage;
     @BeforeMethod
     public void init() {
-        homepage = PageFactory.initElements(CommonAPI.driver, Homepage.class);
+        homepage = PageFactory.initElements(driver, Homepage.class);
     }
 
     public void facebookLogin() {
@@ -32,12 +32,8 @@ public class TestHomepage extends CommonAPI {
         sleepFor(1);
         homepage.clickLoginButton();
         sleepFor(1);
-        Alert alert = driver.switchTo().alert();
-        alert.dismiss();
-        driver.findElement(By.cssSelector("#u_l_2 > input._1frb")).sendKeys("sakil ahmod", Keys.ENTER);
+        driver.findElement(By.className("_1frb")).sendKeys("sakil ahmod", Keys.ENTER);
         sleepFor(1);
-
-
 
 
     }
